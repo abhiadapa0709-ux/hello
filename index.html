@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rentals & Travels</title>
+  <style>  
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f8f8f8;
+      background-size: cover;
+    }
+  
+    }
+    header {
+      background: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      background: #34495e;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #f1c40f;
+    }
+    .container {
+      width: 90%;
+      margin: 20px auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .card h3 { margin: 0; }
+    .btn {
+      display: inline-block;
+      padding: 10px 15px;
+      margin-top: 10px;
+      background: #27ae60;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn:hover { background: #219150; }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      padding: 10px;
+      background: #2980b9;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    form button:hover { background: #1c5f8a; }
+
+    /* Vehicle grid */
+    .vehicle-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .vehicle {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 8px;
+      background: #fff;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .vehicle img {
+      max-width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .filter-buttons {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .filter-buttons button {
+      margin: 5px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      background: #34495e;
+      color: white;
+      cursor: pointer;
+    }
+    .filter-buttons button:hover {
+      background: #2c3e50;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1><b>DREAM CAR RENTALS🚗</b></h1>
+  <p><i><strong>Comfortable & Affordable Car Rentals at Your Service</strong></i></p>
+</header>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#vehicles">Vehicles</a>
+  <a href="#booking">Booking</a>
+  <a href="#payment">Payment</a>
+  <a href="#login">Login</a>
+  <a href="#signup">Signup</a>
+  <a href="#about">ABOUT US</a>
+</nav>
+
+<!-- Home -->
+<div class="container" id="home">
+  <div class="card">
+    <h2>Welcome to Car Rentals & Travels</h2>
+    <p>We provide the best car rental services with affordable prices and luxury experience. Book your ride today!</p>
+  </div>
+</div>
+
+<!-- Vehicles -->
+<div class="container" id="vehicles">
+  <h2>Available Vehicles</h2>
+  
+  <!-- Filter Buttons -->
+  <div class="filter-buttons">
+    <button onclick="filterVehicles('all')">All</button>
+    <button onclick="filterVehicles('sedan')">Sedan</button>
+    <button onclick="filterVehicles('SUV')">SUV</button>
+    <button onclick="filterVehicles('mini van')">Mini Van</button>
+    <button onclick="filterVehicles('THAR')">THAR</button>
+  </div>
+  
+  <div class="vehicle-grid" id="vehicleGrid">
+    <!-- Sedan -->
+    <div class="vehicle city">
+      <img src="c:\Users\LAB08-STUDENT45\Downloads\2025 Hyundai Sonata Hybrid SEL.jpg" alt="Honda City">
+      <h3>Honda City (Sedan)</h3>
+      <p>₹1500/day</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+    <div class="vehicle sedan">
+      <img src="c:\Users\LAB08-STUDENT45\Downloads\Amazing white coloured Hyundai venue car design.jpg" alt="Hyundai venue">
+      <h3>Hyundai venue (Sedan)</h3>
+      <p>₹1600/day</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+
+    <!-- SUV -->
+    <div class="vehicle suv">
+      <img src="c:\Users\LAB08-STUDENT45\Downloads\Thank you Universe I got my New dream car.jpg" alt="Toyota Fortuner">
+      <h3>Toyota Fortuner (SUV)</h3>
+      <p>₹2500/day</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+    <div class="vehicle suv">
+      <img src="c:\Users\LAB08-STUDENT45\Downloads\Apresentando o novo Creta Comfort 2025, a versão de entrada do SUV da Hyundai que vem com um pacote de equipamentos de dar inveja! Com design moderno e tecnologia de ponta, ele promete conquistar os apaix.jpg" alt="Hyundai Creta">
+      <h3>Hyundai Creta (SUV)</h3>
+      <p>₹2200/day</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+
+    <!-- Mini Van -->
+    <div class="vehicle minivan">
+      <img src="c:\Users\LAB08-STUDENT45\Downloads\Toyota Sienna XLE Hybrid – Space, Style, and Smart Efficiency.jpg" alt="Toyota Innova">
+      <h3>Toyota Innova (Mini Van)</h3>
+      <p>₹3000/day</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+    <div class="vehicle minivan">
+      <img src="c:\Users\LAB08-STUDENT45\Downloads\Toyota Sienna XLE Hybrid – Space, Style, and Smart Efficiency.jpg" alt="Mahindra Marazzo">
+      <h3>Mahindra Marazzo (Mini Van)</h3>
+      <p>₹2800/day</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+    <!-- THAR -->
+    <div class="vehicle thar">
+      <img src="c:\Users\LAB08-STUDENT45\Downloads\download.jpg" alt="THAR">
+      <h3>THAR (SUV)</h3>
+      <p>₹3000/day</p>
+      <a href="#booking" class="btn">Book Now</a>
+    </div>
+  </div>
+</div>
+
+<!-- Booking -->
+<div class="container" id="booking">
+  <div class="card">
+    <h2>Booking Page</h2>
+    <form>
+      <label>Name</label>
+      <input type="text" placeholder="Enter your name" required>
+      <label>Email</label>
+      <input type="email" placeholder="Enter your email" required>
+      <label>Select Vehicle</label>
+      <select>
+        <option>Honda City - ₹1500/day</option>
+        <option>Hyundai Verna - ₹1600/day</option>
+        <option>Toyota Fortuner - ₹2500/day</option>
+        <option>Hyundai Creta - ₹2200/day</option>
+        <option>Toyota Innova - ₹3000/day</option>
+        <option>Mahindra Marazzo - ₹2800/day</option>
+        <option>THAR -₹3000  </option>
+      </select>
+      <label>Pickup Date</label>
+      <input type="date" required>
+      <label>Return Date</label>
+      <input type="date" required>
+      <button type="submit">Confirm Booking</button>
+    </form>
+  </div>
+</div>
+
+<!-- Payment -->
+<div class="container" id="payment">
+  <div class="card">
+    <h2>Payment Page</h2>
+    <form>
+      <label>Cardholder Name</label>
+      <input type="text" placeholder="Enter name on card" required>
+      <label>Card Number</label>
+      <input type="text" placeholder="xxxx-xxxx-xxxx-xxxx" required>
+      <label>Expiry Date</label>
+      <input type="month" required>
+      <label>CVV</label>
+      <input type="password" placeholder="***" required>
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+</div>
+
+<!-- Login -->
+<div class="container" id="login">
+  <div class="card">
+    <h2>Login</h2>
+    <form>
+      <label>Email</label>
+      <input type="email" required>
+      <label>Password</label>
+      <input type="password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+</div>
+
+<!-- Signup -->
+<div class="container" id="signup">
+  <div class="card">
+    <h2>Signup (for new users)</h2>
+    <form>
+      <label>Name</label>
+      <input type="text" required>
+      <label>Email</label>
+      <input type="email" required>
+      <label> create Password</label>
+      <input type="password" required>
+      <label> confirm Password</label>
+      <input type="password" required>
+      <button type="submit">Signup</button>
+    </form>
+  </div>
+</div>
+
+<!-- Contact -->
+<div class="container" id="about">
+  <div class="card">
+    <h2>ABOUT US</h2>
+    <p></p>
+    <p><i>Car travel and rental services offer flexible personal transport for trips, ranging from self-drive options for freedom and privacy to chauffeur-driven choices for convenience and relaxation. You can select from various vehicle types like hatchbacks, sedans, and SUVs, with flexible rental periods from hourly to daily and beyond. Key benefits include unmatched convenience, door-to-door service, and tailored travel, especially in areas with limited public transport.</i> </p>
+  </div>
+</div>
+
+<script>
+  function filterVehicles(type) {
+    let vehicles = document.querySelectorAll(".vehicle");
+    vehicles.forEach(v => {
+      if (type === "all") {
+        v.style.display = "block";
+      } else {
+        if (v.classList.contains(type)) {
+          v.style.display = "block";
+        } else {
+          v.style.display = "none";
+        }
+      }
+    });
+  }
+</script>
+
+</body>
+<footer style="background-color: #333; color: white; text-align: center; padding: 20px;">
+  <p>&copy; 2025 Car Rentals & Travels.@ All rights reserved.</p>
+  <p>MAIL : <a href="dreamcartravels@gmail.com" style="color: #FFD700;">dreamcartravels@gmail.com</a></p>
+  <p>CONTACT US:8885035486 </p>
+  <p>DONE BY : ABHISHEK</p>
+</footer>
+
+</html>
